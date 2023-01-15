@@ -18,7 +18,7 @@ const renderMainList = async () => {
   const ul = document.createElement("ul")
   ul.id = "main-posts"
 
-  const data = await getData("http://43.201.103.199/posts")
+  const data = await getData("posts")
   const posts = data.data.posts
 
   posts.forEach((post) => {
