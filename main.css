@@ -1,9 +1,11 @@
+@import 'main.css';
+
 body {
-  width: 100vw;
-  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 100vw;
+  height: 100vh;
   margin: 0;
   background-color: black;
 }
@@ -17,12 +19,90 @@ body {
 header {
   display: flex;
   justify-content: space-between;
-  padding: 0 20px;
-  height: 83px;
   align-items: center;
-  background-color: ivory;
+  height: 83px;
+  padding: 0 20px;
+  background-color: lightskyblue;
 }
 
 #title {
   font-size: 25px;
+}
+
+#content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#main-post-button {
+  width: 336px;
+  height: 67px;
+  margin: 20px 0;
+  padding: 15px;
+  border: none;
+  border-radius: 12px;
+  background-color: #BB2649;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+#main-posts {
+  width: 336px;
+  height: 540px;
+  margin: 0;
+  padding: 0;
+  overflow: scroll;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.main-post {
+  display: flex;
+  width: 336px;
+  height: 100px;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+.main-post-img {
+  width: 100px;
+  height: 100px;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  object-fit: cover;
+}
+
+.main-post-right {
+  width: 236px;
+  padding: 15px 7px;
+  border: 1px solid gray;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border-left: none;
+  box-sizing: border-box;
+}
+
+.main-post-title {
+  width:221px;
+  margin: 0;
+  padding-bottom: 5px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 15px;
+}
+
+.main-post-content {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  margin: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-wrap: break-word; 
+  font-size: 13px;
 }
