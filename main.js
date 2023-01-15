@@ -4,7 +4,7 @@ const content = document.getElementById("content")
 
 const renderButton = () => {
   const button = document.createElement("button")
-  button.innerHTML = "새 글 작성하기"
+  button.innerText = "새 글 작성하기"
   button.id = "main-post-button"
 
   button.addEventListener("click", () => {
@@ -43,11 +43,11 @@ const renderMainList = async () => {
     right.classList.add("main-post-right")
 
     const title = document.createElement("h1")
-    title.innerHTML = post.title
+    title.innerText = post.title
     title.classList.add("main-post-title")
 
     const content = document.createElement("p")
-    content.innerHTML = post.content
+    content.innerText = post.content
     content.classList.add("main-post-content")
 
     right.appendChild(title)
