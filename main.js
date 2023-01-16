@@ -1,8 +1,9 @@
 import { getData } from "./util.js";
-
-const content = document.getElementById("content")
+import DetailPage from "./DetailPage.js"
 
 const renderButton = () => {
+  const main = document.getElementById("main")
+
   const button = document.createElement("button")
   button.innerText = "새 글 작성하기"
   button.id = "main-post-button"
@@ -11,10 +12,13 @@ const renderButton = () => {
     console.log('버튼 클릭')
   })
 
-  content.appendChild(button)
+  main.appendChild(button)
 }
 
 const renderMainList = async () => {
+  console.log('mainlist')
+  const main = document.getElementById("main")
+
   const ul = document.createElement("ul")
   ul.id = "main-posts"
 
@@ -24,9 +28,11 @@ const renderMainList = async () => {
   posts.forEach((post) => {
     const li = document.createElement("li")
     li.classList.add("main-post")
+    li.dataset.postId = post.postId
 
-    li.addEventListener("click", () => {
-      console.log('리스트 클릭')
+    li.addEventListener("click", (e) => {
+      const postId = e.currentTarget.dataset.postId
+      DetailPage(postId)
     })
 
     const left = document.createElement("div")
@@ -57,13 +63,26 @@ const renderMainList = async () => {
     ul.appendChild(li)
   })
 
-  content.appendChild(ul)
+  main.appendChild(ul)
 }
 
 
 const MainPage = () => {
+  const main = document.getElementById("main")
+  main.innerHTML = ""
+
+  const back = document.getElementById("back")
+  back.style.display = "none"
+
   renderButton()
   renderMainList()
 }
 
 MainPage()
+
+const back = document.getElementById("back")
+back.addEventListener("click", () => {
+  MainPage()
+})
+
+export default MainPage

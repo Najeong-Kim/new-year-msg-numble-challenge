@@ -25,11 +25,16 @@ header {
   background-color: lightskyblue;
 }
 
+#back {
+  font-size: 20px;
+  cursor: pointer;
+}
+
 #title {
   font-size: 25px;
 }
 
-#content {
+#main {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -53,11 +58,18 @@ header {
   height: 540px;
   margin: 0;
   padding: 0;
-  overflow: scroll;
   list-style: none;
   display: flex;
   flex-direction: column;
   gap: 20px;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+#main-posts::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera*/
 }
 
 .main-post {
@@ -105,4 +117,54 @@ header {
   text-overflow: ellipsis;
   word-wrap: break-word; 
   font-size: 13px;
+}
+
+.detail-post-img {
+  width: 360px;
+  height: 300px;
+  object-fit: cover;
+}
+
+.detail-post-container {
+  width: 360px;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.detail-post-title {
+  margin: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.detail-post-date {
+  font-size: 10px;
+}
+
+.detail-post-content {
+  font-size: 16px;
+  max-height: 100px;
+  overflow-y: scroll;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.detail-post-content::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera*/
+}
+
+.detail-divider {
+  width: 320px;
+  border: 1px solid black;
+}
+
+.detail-comment-list {
+  display: flex;
+  flex-direction: column;
+  width: 360px;
+  padding: 20px;
+  gap: 5px;
+  box-sizing: border-box;
+  font-size: 15px;
 }
