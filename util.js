@@ -9,3 +9,14 @@ export const getData = async (url) => {
     console.error(e)
   }
 }
+
+export const postData = async (url, body) => {
+  try {
+    await fetch(baseURL + url, {
+      method: "POST",
+      body: body
+    })
+  } catch (e) {
+    console.error(e)
+  }
+}
